@@ -1,0 +1,22 @@
+select
+   table_name,
+   index_name,
+   column_name
+from
+   sys.dba_ind_columns
+where TABLE_NAME ='scclient'
+order by
+   table_name,
+   column_position;
+   
+   
+select
+   owner,
+   index_name,
+   index_type
+from
+   dba_indexes
+where
+   index_type like 'FUNCTION-BASED%'
+and
+   owner not in ('XDB','SYS','SYSTEM');
